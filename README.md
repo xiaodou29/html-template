@@ -16,6 +16,9 @@
 console.log($.t('content', {num:888})) // '这是中文内容888'
 console.log($.t('title')) // '这是中文标题'
 ```
+## 发布
+请先npm run build，连同dist目录一起提交，然后再填写表单：
+[共享表单](https://feishu.feishu.cn/share/base/form/shrcnGFgOOsFGew3SDZHPhzkM0e)
 
 - 在标签中使用:
 通过将属性data-i18n设置为某个语言配置的key，在使用该语言的时候，将使用该key对应的值覆盖标签的内容，从而实现国际化。
@@ -59,6 +62,10 @@ This template uses [jquery-i18next](https://locize.com/blog/jquery-i18next/) for
 console.log($.t('content', {num:888})) // '这是中文内容888'
 console.log($.t('title')) // '这是中文标题'
 ```
+
+## Publish
+Please npm run build first, submit it together with the dist directory, and then fill in the form:
+[Share form](https://feishu.feishu.cn/share/base/form/shrcnGFgOOsFGew3SDZHPhzkM0e)
 
 - Use in tags:
 By setting the attribute data-i18n to the key configured in a certain language, when using that language, the value corresponding to the key will be used to overwrite the content of the tag, thereby achieving internationalization.
