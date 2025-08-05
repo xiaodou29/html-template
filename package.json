@@ -1,15 +1,15 @@
 {
-  "name": "HTML Template",
+  "name": "HTTP Request Tool",
   "version": "1.0.0",
   "type": "module",
-  "description": "HTML TypeScript template, using Vite bundler",
+  "description": "A simple HTTP request tool built with TypeScript and Vite",
   "scripts": {
     "dev": "vite",
     "start": "npm run dev",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
+  "keywords": ["http", "request", "api", "testing", "tool"],
   "author": "",
   "output": "dist",
   "license": "ISC",
@@ -20,7 +20,6 @@
     "vite": "^3.0.4"
   },
   "dependencies": {
-    "@lark-base-open/js-sdk": "^0.5.0",
     "bootstrap": "^5.3.0",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",

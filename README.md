@@ -1,84 +1,88 @@
-# 开始
-- 点击绿色run按钮
-- 编辑 [index.ts](#src/index.ts) 并观看实时更新！
+# HTTP Request Tool
 
-# 了解更多
+一个简单的HTTP请求工具，基于TypeScript和Vite构建。
 
-您可以在[多维表格扩展脚本开发指南](https://feishu.feishu.cn/docx/U3wodO5eqome3uxFAC3cl0qanIe)中了解更多信息 ）。
+## 功能特性
 
-## 安装包
-在 Shell 窗格中安装npm包或在 Packages 窗格中搜索并添加。
+- 🌐 支持多种HTTP方法：GET、POST、PUT、DELETE、PATCH
+- 📝 自定义请求头管理
+- 📦 JSON请求体支持
+- 📊 详细的响应信息显示
+- 🎨 现代化的Bootstrap界面
+- 📱 响应式设计，支持移动端
+- ⚡ 实时请求状态反馈
 
-## 国际化
-本模板使用[jquery-i18next](https://locize.com/blog/jquery-i18next/)进行国际化。
-- 在js文件中通过$.t()调用，如中文环境下:
-```js
-console.log($.t('content', {num:888})) // '这是中文内容888'
-console.log($.t('title')) // '这是中文标题'
-```
-## 发布
-请先npm run build，连同dist目录一起提交，然后再填写表单：
-[共享表单](https://feishu.feishu.cn/share/base/form/shrcnGFgOOsFGew3SDZHPhzkM0e)
+## 快速开始
 
-- 在标签中使用:
-通过将属性data-i18n设置为某个语言配置的key，在使用该语言的时候，将使用该key对应的值覆盖标签的内容，从而实现国际化。
-data-i18n-options用于插值，同$.t函数的第二个参数，将替换语言配置中被{{}}包裹的变量。
-
-```html
-<h1 data-i18n="title">默认标题</h1>
-
-<h2 data-i18n="content" data-i18n-options='{"num":888}'> </h2>
+### 启动开发服务器
+```bash
+npm install
+npm run dev
 ```
 
-如果要在input等不含子元素的元素中使用，则需要给data-i18n属性值加上 [希望赋值的标签属性] 前缀，
-比如，给input的placeholder属性进行国际化配置：
-
-```html
-<input data-i18n="[placeholder]title"/>
-
+### 构建生产版本
+```bash
+npm run build
 ```
 
+## 使用方法
 
+1. **输入请求地址**：在URL输入框中填写完整的HTTP地址
+2. **选择请求方法**：从下拉菜单中选择GET、POST、PUT、DELETE或PATCH
+3. **添加请求头**：点击"添加请求头"按钮添加自定义请求头
+4. **填写请求体**：对于POST、PUT、PATCH请求，可以在请求体文本框中填写JSON数据
+5. **发送请求**：点击"发送请求"按钮发起HTTP请求
+6. **查看响应**：在响应结果区域查看状态码、响应头和响应体
 
+## 示例
 
-
-# Getting Started
-- Hit run
-- Edit [index.ts](#src/index.ts) and watch it live update!
-
-# Learn More
-
-You can learn more in the [Base Extension Development Guide](https://lark-technologies.larksuite.com/docx/HvCbdSzXNowzMmxWgXsuB2Ngs7d)
-
-## Install packages
-
-Install packages in Shell pane or search and add in Packages pane.
-
-
-## globalization
-This template uses [jquery-i18next](https://locize.com/blog/jquery-i18next/) for internationalization.
-- Called through $.t() in the js file, such as in Chinese environment:
-```js
-console.log($.t('content', {num:888})) // '这是中文内容888'
-console.log($.t('title')) // '这是中文标题'
+### GET请求
+```
+URL: https://jsonplaceholder.typicode.com/posts/1
+Method: GET
 ```
 
-## Publish
-Please npm run build first, submit it together with the dist directory, and then fill in the form:
-[Share form](https://feishu.feishu.cn/share/base/form/shrcnGFgOOsFGew3SDZHPhzkM0e)
-
-- Use in tags:
-By setting the attribute data-i18n to the key configured in a certain language, when using that language, the value corresponding to the key will be used to overwrite the content of the tag, thereby achieving internationalization.
-data-i18n-options are used for interpolation. They are the same as the second parameter of the $.t function and will replace the variables wrapped in {{}} in the language configuration.
-```html
-<h1 data-i18n="title">默认标题</h1>
-
-<h2 data-i18n="content" data-i18n-options='{"num":888}'> </h2>
+### POST请求
+```
+URL: https://jsonplaceholder.typicode.com/posts
+Method: POST
+Headers: Content-Type: application/json
+Body: {"title": "Test Post", "body": "This is a test", "userId": 1}
 ```
 
-If you want to use it in an element without child elements such as input, you need to prefix the data-i18n attribute value with [the label attribute you want to assign].
-For example, configure internationalization for the placeholder attribute of input:
-```html
-<input data-i18n="[placeholder]title"/>
+## 技术栈
+
+- **前端框架**: TypeScript + Vite
+- **UI库**: Bootstrap 5
+- **HTTP客户端**: Fetch API
+- **样式**: SCSS
+- **构建工具**: Vite
+
+## 项目结构
 
 ```
+src/
+├── index.ts          # 主要逻辑代码
+├── index.scss        # 样式文件
+└── locales/          # 国际化文件（可选）
+    ├── zh.ts         # 中文配置
+    ├── en.ts         # 英文配置
+    └── i18n.ts       # 国际化初始化
+```
+
+## 开发指南
+
+### 添加新功能
+1. 在 `src/index.ts` 中添加新的功能逻辑
+2. 在 `src/index.scss` 中添加相应的样式
+3. 在 `index.html` 中添加必要的HTML元素
+
+### 自定义样式
+项目使用SCSS进行样式管理，主要样式文件位于 `src/index.scss`。
+
+### 国际化支持
+项目支持国际化，可以通过修改 `src/locales/` 目录下的文件来添加新的语言支持。
+
+## 许可证
+
+ISC License
